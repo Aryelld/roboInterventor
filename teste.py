@@ -1,4 +1,5 @@
 import Grafo as g
+import Rota as r
 # onde R representa a localização atual do robo
 # interventor
 # mapa = [['R','0','0','0','0','0'],
@@ -10,8 +11,11 @@ import Grafo as g
 # trilhar um caminho até locais mais próximos 
 # ao local inacessível, uma solução é tornar também
 # a vizinhança marcada como local inacessível (como usarei por hora):
-mapa = [['R','0','0','0','0' , '0'],
+mapa = [['0','0','0','0','0' , '0'],
         ['0','1','0','1','-1','-1'],
         ['0','0','0','0','-1','-1']]
 grf = g.G(mapa)
-grf.toString()
+for first in grf.grafo.keys():
+        break
+print(r.listaAcoes(first,grf.grafo))
+# grf.toString()
