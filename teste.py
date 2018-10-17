@@ -11,12 +11,12 @@ import Rota as r
 # trilhar um caminho até locais mais próximos 
 # ao local inacessível, uma solução é tornar também
 # a vizinhança marcada como local inacessível (como usarei por hora):
-mapa = [['0','0','0','0','0' , '0'],
-        ['0','1','0','1','1','-1'],
-        ['0','0','0','0','1','-1']]
+mapa = [['4','4','4','4', '4', '4'],
+        ['4','1','4','1','-1','-1'],
+        ['4','4','4','4','-1','-1']]
 grf = g.G(mapa)
 # pega o termo inicial, no qual o robô interventor estará
 for first in grf.grafo.keys():
         break
-print(r.listaAcoes(first,grf.grafo))
+print(r.listaAcoesL(first,grf.grafo))
 # grf.toString()

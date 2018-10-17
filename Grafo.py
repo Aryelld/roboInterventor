@@ -30,23 +30,23 @@ class G:
         for linha in self.mapaVertice:
             j = 0 
             for pos in linha:
-                if(pos.tipo == '0'):
+                if(pos.tipo == '4'):
                     self.grafo[pos] = []
                     if(i>0):
                         aux = self.mapaVertice[i-1][j]
-                        if(aux.tipo == '0' or aux.tipo == '-1'):
+                        if(aux.tipo == '4' or aux.tipo == '-1'):
                             self.grafo[pos] += [A(pos, aux, 'acima')] 
                     if(j>0):
                         aux = self.mapaVertice[i][j-1]
-                        if(aux.tipo == '0' or aux.tipo == '-1'):
+                        if(aux.tipo == '4' or aux.tipo == '-1'):
                             self.grafo[pos] += [A(pos, aux, 'atras')]
                     if(i<iMax-1):
                         aux = self.mapaVertice[i+1][j]
-                        if(aux.tipo == '0' or aux.tipo == '-1'):
+                        if(aux.tipo == '4' or aux.tipo == '-1'):
                             self.grafo[pos] += [A(pos, aux, 'abaixo')]
                     if(j<jMax-1):
                         aux = self.mapaVertice[i][j+1]
-                        if(aux.tipo == '0' or aux.tipo == '-1'):
+                        if(aux.tipo == '4' or aux.tipo == '-1'):
                             self.grafo[pos] += [A(pos, aux, 'afrente')]
                 j+=1
             i+=1     
