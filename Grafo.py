@@ -10,7 +10,7 @@ class V:
     def visitar(self):
         self.visitado = True
     def toString(self):
-        return self.tipo
+        return str(self.tipo)
 # classe Aresta
 class A:
     def __init__(self, vertice1, vertice2, acao):
@@ -30,26 +30,32 @@ class G:
         for linha in self.mapaVertice:
             j = 0 
             for pos in linha:
-                if(pos.tipo == '4'):
+                if(pos.tipo == 4):
                     self.grafo[pos] = []
                     if(i>0):
                         aux = self.mapaVertice[i-1][j]
-                        if(aux.tipo == '4' or aux.tipo == '-1'):
+                        if(aux.tipo == 4 or aux.tipo == -1):
                             self.grafo[pos] += [A(pos, aux, 'acima')] 
                     if(j>0):
                         aux = self.mapaVertice[i][j-1]
-                        if(aux.tipo == '4' or aux.tipo == '-1'):
+                        if(aux.tipo == 4 or aux.tipo == -1):
                             self.grafo[pos] += [A(pos, aux, 'atras')]
                     if(i<iMax-1):
                         aux = self.mapaVertice[i+1][j]
-                        if(aux.tipo == '4' or aux.tipo == '-1'):
+                        if(aux.tipo == 4 or aux.tipo == -1):
                             self.grafo[pos] += [A(pos, aux, 'abaixo')]
                     if(j<jMax-1):
                         aux = self.mapaVertice[i][j+1]
-                        if(aux.tipo == '4' or aux.tipo == '-1'):
+                        if(aux.tipo == 4 or aux.tipo == -1):
                             self.grafo[pos] += [A(pos, aux, 'afrente')]
                 j+=1
-            i+=1     
+            i+=1  
+    def getAresta(self, vertice1, vertice2):
+        if(vertice1 in self.grafo.keys()):
+            for aresta in self.grafo[vertice1]:
+                if(aresta.vertice2 == vertice2):
+                    return aresta
+        return None
     def mpV(self,mapa):
         retorno = []
         for line in mapa:

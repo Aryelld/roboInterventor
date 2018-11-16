@@ -1,3 +1,6 @@
+# este arquivo apenas possui tentativas da 
+# implementação do ant colony para rotas, ainda
+# não obteve sucesso
 import pants
 import math
 import random
